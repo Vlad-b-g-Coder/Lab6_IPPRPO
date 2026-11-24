@@ -48,7 +48,7 @@ def test_resolve_unknown_country_raises_400():
     resolver = CountryResolver(COUNTRIES)
     with pytest.raises(GatewayError) as error:
         resolver.resolve("Нигде")
-    assert error.value.status == 4001
+    assert error.value.status == 400
 
 
 def test_resolver_empty_list_raises():
